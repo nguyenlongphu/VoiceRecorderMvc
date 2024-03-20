@@ -1,0 +1,61 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #3e8e41;
+    }
+
+    button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+audio {
+    display: block;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.audio-item {
+    margin-bottom: 1rem;
+}
+
+.audio-name {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+    .delete-button:hover {
+        background-color: #da190b;
+    }
+
+    .delete-button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Audio Recorder</title>
+    <link href ="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>Audio Recorder</h1>
+    <button id="recordButton">Start Record</button>
+    <button id="stopButton" disabled>Stop Record</button>
+
+    <p>Recent Recorded Audio</p>
+    <audio id="recordedAudio" controls></audio>
+
+    <div id="audioList">
+        <h2>Recorded Audio List</h2>
+    </div>
+
+    <script src="~/js/app.js"></script>
+</body>
+
+</html>
