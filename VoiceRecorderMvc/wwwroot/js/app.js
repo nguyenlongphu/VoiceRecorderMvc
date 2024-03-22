@@ -1,6 +1,8 @@
 ﻿const mic_btn = document.querySelector('#mic');
 const playback = document.querySelector('.playback');
 const downloadLink = document.createElement('a');
+const record_icon = document.getElementById('record');
+const stop_icon = document.getElementById('stop');
 
 mic_btn.addEventListener('click', ToggleMic);
 
@@ -62,10 +64,14 @@ function ToggleMic() {
     is_recording = !is_recording;
 
     if (is_recording) {
+        record_icon.style.display = "none";
+        stop_icon.style.display = "inline-block";
         recorder.start();
         mic_btn.classList.add('is-recording');
 
     } else {
+        stop_icon.style.display = "none";
+        record_icon.style.display = "inline-block";
         recorder.stop();
         mic_btn.classList.remove('is-recording');
     }

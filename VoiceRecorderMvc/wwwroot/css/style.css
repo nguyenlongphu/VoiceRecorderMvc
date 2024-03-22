@@ -121,3 +121,6 @@ main {
 .is-hidden {
     display: none;
 }
+#stop {
+    display: none;
+}
