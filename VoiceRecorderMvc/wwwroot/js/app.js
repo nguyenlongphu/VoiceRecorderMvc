@@ -19,13 +19,11 @@ function SetupAudio() {
             })
             .then(SetupStream)
             .catch(err => {
-
-                console.log(err)
-
+                console.log(err);
             });
-
     }
 }
+
 SetupAudio();
 
 function SetupStream(stream) {
@@ -33,7 +31,8 @@ function SetupStream(stream) {
 
     recorder.ondataavailable = e => {
         chunks.push(e.data);
-    }
+    };
+
     recorder.onstop = e => {
         const blob = new Blob(chunks, { type: "audio/mp3; codecs=opus" });
         chunks = [];
@@ -52,7 +51,8 @@ function SetupStream(stream) {
         document.body.removeChild(downloadLink);
 
         playback.src = downloadLink.href;
-    }
+    };
+
     can_record = true;
 }
 
@@ -63,8 +63,16 @@ function ToggleMic() {
 
     if (is_recording) {
         recorder.start();
-        mic_btn.classList.add('is-recording');
 
+        // Dừng ghi âm sau 15 giây
+        setTimeout(() => {
+            if (is_recording) {
+                recorder.stop();
+                mic_btn.classList.remove('is-recording');
+            }
+        }, 15000);
+
+        mic_btn.classList.add('is-recording');
     } else {
         recorder.stop();
         mic_btn.classList.remove('is-recording');
